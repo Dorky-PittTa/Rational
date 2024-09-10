@@ -60,30 +60,49 @@ public class RationalTest {
     public void testMulti(){
         r1.numerator = 1;
         r1.denominator = 2;
-        r2.numerator = 2;
-        r2.denominator = 3;
+        r2.numerator = 1;
+        r2.denominator = 4;
         r1.multiply(r2);
         Assert.assertEquals(1, r1.numerator);
-        Assert.assertEquals(3, r1.denominator);
+        Assert.assertEquals(8, r1.denominator);
     }
 
     @Test
     public void testDivide(){
-        r1.numerator = 2;
-        r1.denominator = 4;
-        r2.numerator = 4;
-        r2.denominator = 8;
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
         r1.divide(r2);
-        Assert.assertEquals(1, r1.numerator);
+        Assert.assertEquals(2, r1.numerator);
         Assert.assertEquals(1, r1.denominator);
     }
 
     @Test
     public void testEqual(){
-        r1.numerator = 2;
-        r1.denominator = 4;
-        r2.numerator = 4;
-        r2.denominator = 8;
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        Assert.assertNotEquals(r1, r2);
+    }
+
+    @Test
+    public void testCompare(){
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        Assert.assertEquals(-1, r1.compareTo(r2));
+    }
+
+    @Test
+    public void testToStr(){
+        r1.numerator = 1;
+        r1.denominator = 2;
+        r2.numerator = 1;
+        r2.denominator = 4;
+        Assert.assertEquals("1/2", r1.toString());
     }
 
     /***
